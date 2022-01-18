@@ -25,19 +25,25 @@ env.Append(
         "-mfpu=fpv4-sp-d16",
         "-Wall",
         "-Wextra",
+        "-O1",
+        #"-flto",
+        #"-ffat-lto-objects",
         "-ffunction-sections",
         "-fdata-sections",
-        "-mlong-calls"
+        "-mlong-calls",
+        "-fsingle-precision-constant"
 
     ],
 
     CXXFLAGS=[
         "-std=c++11",
         "-fno-exceptions",
+        "-mcpu=cortex-m4",
+        "-mfloat-abi=hard",
+        "-mfpu=fpv4-sp-d16",
         "-mthumb",
         "-c",
-        "-g",
-        "-Os",
+        "-O1",
         "-ffunction-sections",
         "-fdata-sections",
         "-mlong-calls",
@@ -46,7 +52,8 @@ env.Append(
         "-fno-rtti",
         "-fno-exceptions",
         "-fno-use-cxa-atexit",
-        "-MMD"
+        "-MMD",
+        "-fsingle-precision-constant"
     ],
 
     CPPDEFINES=[
@@ -59,6 +66,7 @@ env.Append(
 
     LINKFLAGS=[
         "-mthumb",
+        "-Os",
         "-mcpu=cortex-m4",
         "-mfloat-abi=hard",
         "-mfpu=fpv4-sp-d16",

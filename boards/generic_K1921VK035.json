@@ -3,13 +3,13 @@
     "core": "K1921VK",
     "cpu": "cortex-m4f",
     "extra_flags": "",
-    "f_ext": "12000000L",
+    "f_ext": "16000000L",
     "f_cpu": "100000000L",
     "clk_select": "pll",
     "mcu": "K1921VK035"
   },
   "debug": {
-    "openocd_target": "K1921vk035",
+    "openocd_target": "K1921VK035",
     "svd_path": "K1921VK035.svd"
   },
   "frameworks": [

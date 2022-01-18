@@ -74,7 +74,7 @@ class K1921vkPlatform(PlatformBase):
                 server_args.extend(debug.get("openocd_extra_args", []))
             debug['tools'][link] = {
                 "server": {
-                    "package": "tool-openocd",
+                    "package": "tool-openocd-k1921vk",
                     "executable": "bin/openocd",
                     "arguments": server_args
                 }

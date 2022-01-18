@@ -11,7 +11,7 @@
     "board": "VOSTOK_UNO_035"
   },
   "debug": {
-    "openocd_target": "K1921vk035",
+    "openocd_target": "k1921vk035",
     "svd_path": "K1921VK035.svd"
   },
   "frameworks": [
