@@ -125,6 +125,16 @@ if upload_protocol in debug_tools:
 # custom upload tool
 elif upload_protocol == "custom":
     upload_actions = [env.VerboseAction("$UPLOADCMD", "Uploading $SOURCE")]
+elif upload_protocol == "k1921vkx_flasher":
+
+    uploader_flags = ["-cwE","-f","mflash","-n", "main","-F","%s"%board.get("upload.offset_address", ""),"-p","$UPLOAD_PORT","-b","$UPLOAD_SPEED","$SOURCE"]
+    
+    env.Replace(
+        UPLOADER=join(
+            platform.get_package_dir("tool-k1921vkx-flasher") or "", "k1921vkx_flasher"),
+        UPLOADERFLAGS=uploader_flags,
+        UPLOADCMD="$UPLOADER $UPLOADERFLAGS")
+    upload_actions = [env.VerboseAction("$UPLOADCMD", "Uploading $SOURCE")]
 else:
     sys.stderr.write("Warning! Unknown upload protocol %s\n" % upload_protocol)
 

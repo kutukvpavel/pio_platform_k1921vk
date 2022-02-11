@@ -44,6 +44,7 @@ class K1921vkPlatform(PlatformBase):
         return result
 
     def _add_default_debug_tools(self, board):
+        non_debug_protocols = ["k1921vkx_flasher"]
         SDK_DIR = self.get_package_dir("framework-k1921vk-sdk")
         mcu = board.get("build.mcu", "")
         debug = board.manifest.get("debug", {})
@@ -54,7 +55,7 @@ class K1921vkPlatform(PlatformBase):
 
         # J-Link, ST-Link
         for link in upload_protocols:
-            if link not in upload_protocols or link in debug['tools']:
+            if link not in upload_protocols or link in debug['tools'] or link in non_debug_protocols:
                 continue
 
             server_args = ["-s", "$PACKAGE_DIR/scripts"]

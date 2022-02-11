@@ -3,7 +3,8 @@
     "core": "K1921VK",
     "cpu": "cortex-m4f",
     "extra_flags": "",
-    "f_ext": "12000000L",
+    "f_ext": "16000000L",
+    "_comment": "if f_ext = 0 then pll use internal RC 8Mgz",
     "f_cpu": "100000000L",
     "clk_select": "pll",
     "mcu": "K1921VK035",
@@ -24,13 +25,15 @@
     "maximum_ram_size": 16384,
     "maximum_size": 65536,
     "offset_address":"0x00000000",
-    "protocol": "stlink",
+    "protocol": "k1921vkx_flasher",
     "protocols": [
-      "stlink"
+      "stlink",
+      "k1921vkx_flasher"
     ],
     "require_upload_port": true,
     "use_1200bps_touch": false,
-    "wait_for_upload_port": false
+    "wait_for_upload_port": false,
+    "speed": 460800
   },
 
   "url": "https://niiet.ru/product/1921%D0%B2%D0%BA035/",

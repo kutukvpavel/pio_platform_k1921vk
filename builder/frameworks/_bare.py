@@ -25,10 +25,11 @@ env.Append(
         "-mfpu=fpv4-sp-d16",
         "-Wall",
         "-Wextra",
-        "-O1",
+        "-Os",
         #"-flto",
         #"-ffat-lto-objects",
         "-ffunction-sections",
+        "-fno-builtin",
         "-fdata-sections",
         "-mlong-calls",
         "-fsingle-precision-constant"
@@ -75,7 +76,8 @@ env.Append(
         "-specs=nosys.specs",
         "-specs=nano.specs",
         "-lgcc",
-        "-lc"
+        "-lc",
+        "-flto"
     ],
 
     LIBS=["c", "gcc", "m", "stdc++"]

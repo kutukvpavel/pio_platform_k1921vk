@@ -31,12 +31,36 @@ env.Append(
 if not board.get("build.ldscript", ""):
     env.Replace(LDSCRIPT_PATH=os.path.join(DEVICE_DIR, "Source","GCC","%s.ld"%mcu))
 
+
 env.Append(
     CPPPATH=[
         os.path.join(DEVICE_DIR, "Include"),
         os.path.join( SDK_DIR, "platform","CMSIS","Core","Include")
     ]
 )
+
+#
+# Compile startup_script
+#
+if not board.get("build.custom_startup_script", ""):
+    sources_path = os.path.join(DEVICE_DIR, "Source","GCC")
+    env.BuildSources(
+        os.path.join("$BUILD_DIR", "startup_script"), sources_path,
+        src_filter=[
+            "-<*>",
+            "+<startup_%s.S>" % mcu]
+    )
+else:
+    sources_path =  os.path.dirname(board.get("build.custom_startup_script", ""))
+    file_name =  os.path.basename(board.get("build.custom_startup_script", ""))
+    print(sources_path)
+    print(file_name) 
+    env.BuildSources(
+        os.path.join("$BUILD_DIR", "startup_script"), sources_path,
+        src_filter=[
+            "-<*>",
+            "+<%s>" % file_name]
+    )
 
 #
 # Compile CMSIS sources
@@ -47,8 +71,7 @@ env.BuildSources(
     os.path.join("$BUILD_DIR", "FrameworkCMSIS"), sources_path,
     src_filter=[
         "-<*>",
-        "+<system_%s.c>" % mcu,
-        "+<GCC/startup_%s.S>" % mcu]
+        "+<system_%s.c>" % mcu]
 )
 
 #
