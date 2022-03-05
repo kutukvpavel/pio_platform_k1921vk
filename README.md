@@ -3,8 +3,9 @@
 
 # Usage
 
-1. [Install PlatformIO](http://platformio.org)
-2. Create PlatformIO project and configure a platform option in [platformio.ini](http://docs.platformio.org/page/projectconf.html) file:
+1. [Install VS_Code](https://code.visualstudio.com/)  
+2. [Install VS_Code+PlatformIO](https://docs.platformio.org/en/latest/integration/ide/vscode.html#ide-vscode)  
+3. Create PlatformIO project and configure a platform option in [platformio.ini](http://docs.platformio.org/page/projectconf.html) file:
 
 ## Stable version
 
@@ -12,7 +13,7 @@
 [env:stable]
 platform = k1921vk
 framework = k1921vk_sdk
-board = ...
+board = generic_K1921VK01T
 ...
 ```
 

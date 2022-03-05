@@ -8,8 +8,8 @@
     "f_cpu": "100000000L",
     "clk_select": "pll",
     "mcu": "K1921VK035",
-    "variant": "vostok_uno_035",
-    "board": "VOSTOK_UNO_035"
+    "variant": "vostok_uno_vn035",
+    "board": "VOSTOK_UNO_VN035"
   },
   "debug": {
     "openocd_target": "k1921vk035",
@@ -19,7 +19,7 @@
     "k1921vk_sdk",
     "arduino"
   ],
-  "name": "Vostok UNO",
+  "name": "Vostok UNO-VN035",
   "upload": {
     "disable_flushing": false,
     "maximum_ram_size": 16384,

@@ -7,8 +7,8 @@
     "f_cpu": "100000000L",
     "clk_select": "pll",
     "mcu": "K1921VK01T",
-    "variant": "vostok_mega_01t",
-    "board": "VOSTOK_MEGA_01T"
+    "variant": "vostok_mega_vn01t",
+    "board": "VOSTOK_MEGA_VN01T"
   },
   "debug": {
     "openocd_target": "k1921vk01t",
@@ -18,7 +18,7 @@
     "k1921vk_sdk",
     "arduino"
   ],
-  "name": "Vostok MEGA",
+  "name": "Vostok MEGA-VN01T",
   "upload": {
     "disable_flushing": false,
     "maximum_ram_size": 196608,
