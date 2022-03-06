@@ -2,7 +2,7 @@
   "name": "k1921vk",
   "title": "K1921VK",
   "description": "NIIET K1921VK series",
-  "homepage": "https://github.com/kenny5660/pio_platform_k1921vk",
+  "homepage": "https://github.com/DCVostok/pio_platform_k1921vk",
   "license": "Apache-2.0",
   "keywords": [
       "dev-platform",
@@ -18,13 +18,13 @@
     "type": "git",
     "url": "TODO"
   },
-  "version": "1.5.0",
+  "version": "1.5.2",
   "frameworks": {
     "k1921vk_sdk": {
       "package": "framework-k1921vk-sdk",
       "script": "builder/frameworks/k1921vk-sdk.py",
       "description": "The K1921VKx SDK is a set of software development tools for NIIET microcontrollers",
-      "homepage": "https://github.com/kenny5660/framework-k1921vk-sdk",
+      "homepage": "https://github.com/DCVostok/framework-k1921vk-sdk",
       "title": "NIIET k1921vk SDK"
     },
     "arduino": {
@@ -38,7 +38,7 @@
   "packages": {
     "framework-k1921vk-sdk":{
       "type": "framework",
-      "version": "~1.7.1"
+      "version": "~1.7.3"
     },
     "framework-k1921vk-arduino":{
       "type": "framework",
