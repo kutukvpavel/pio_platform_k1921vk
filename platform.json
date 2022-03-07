@@ -18,7 +18,7 @@
     "type": "git",
     "url": "TODO"
   },
-  "version": "1.5.2",
+  "version": "1.5.3",
   "frameworks": {
     "k1921vk_sdk": {
       "package": "framework-k1921vk-sdk",
@@ -42,6 +42,7 @@
     },
     "framework-k1921vk-arduino":{
       "type": "framework",
+      "optional": true,
       "version": "~1.0.0"
     },
     "toolchain-gccarmnoneeabi": {
@@ -51,7 +52,6 @@
     },
     "tool-openocd-k1921vk": {
       "type": "uploader",
-      "optional": true,
       "version": "~0.10.0"
     }
     ,
