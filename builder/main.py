@@ -127,13 +127,14 @@ elif upload_protocol == "custom":
     upload_actions = [env.VerboseAction("$UPLOADCMD", "Uploading $SOURCE")]
 elif upload_protocol == "k1921vkx_flasher":
 
-    uploader_flags = ["-cwE","-f","mflash","-n", "main","-F","%s"%board.get("upload.offset_address", ""),"-p","$UPLOAD_PORT","-b","$UPLOAD_SPEED","$SOURCE"]
+    uploader_flags = ["-c","-w","-E","-f","mflash","-n", "main","-F","%s"%board.get("upload.offset_address", ""),"-p","$UPLOAD_PORT","-b","$UPLOAD_SPEED","--file","$SOURCE"]
     
     env.Replace(
         UPLOADER=join(
-            platform.get_package_dir("tool-k1921vkx-flasher") or "", "k1921vkx_flasher"),
+            platform.get_package_dir("tool-k1921vkx-flasher") or "", "k1921vkx_flasher.py"),
         UPLOADERFLAGS=uploader_flags,
-        UPLOADCMD="$UPLOADER $UPLOADERFLAGS")
+        UPLOADCMD="$PYTHONEXE $UPLOADER $UPLOADERFLAGS")
+    
     upload_actions = [env.VerboseAction("$UPLOADCMD", "Uploading $SOURCE")]
 else:
     sys.stderr.write("Warning! Unknown upload protocol %s\n" % upload_protocol)
@@ -151,5 +152,4 @@ if any("-Wl,-T" in f for f in env.get("LINKFLAGS", [])):
 #
 # Default targets
 #
-
 Default([target_buildprog, target_size])

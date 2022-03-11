@@ -18,7 +18,7 @@
     "type": "git",
     "url": "TODO"
   },
-  "version": "1.5.3",
+  "version": "1.5.4",
   "frameworks": {
     "k1921vk_sdk": {
       "package": "framework-k1921vk-sdk",
