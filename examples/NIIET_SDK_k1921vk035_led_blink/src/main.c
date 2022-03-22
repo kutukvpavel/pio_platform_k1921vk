@@ -2,13 +2,18 @@
 #include "retarget_conf.h"
 
 #define LED_PIN (GPIO_Pin_8)
-#define LED_PORT (GPIOB)
+#define LED_PORT (GPIOA)
 
 void periph_init()
 {
     SystemCoreClockUpdate();
     retarget_init(); //UART1 used for printf
     SysTick_Config(10000000);//5 Hz
+    
+    RCU_AHBClkCmd(RCU_AHBClk_GPIOA, ENABLE);
+    RCU_AHBRstCmd(RCU_AHBRst_GPIOA, ENABLE);
+    RCU_AHBClkCmd(RCU_AHBClk_GPIOB, ENABLE);
+    RCU_AHBRstCmd(RCU_AHBRst_GPIOB, ENABLE);
 
     GPIO_Init_TypeDef gpio_init_struct;
     GPIO_StructInit(&gpio_init_struct);
@@ -26,8 +31,8 @@ volatile int a = 0;
 int main()
 {
     periph_init();
-    printf("K1921VK01T> All periph inited\n");
-    printf("K1921VK01T> CPU frequency is %.3f MHz\n", SystemCoreClock / 1E6);
+    printf("All periph inited\n");
+    printf("CPU frequency is %lu MHz\n", SystemCoreClock / (int)1E6);
 
     while(1){
        // __WFI();

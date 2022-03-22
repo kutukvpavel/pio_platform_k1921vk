@@ -39,7 +39,7 @@ int main()
 {
     periph_init();
     printf("K1921VK01T> All periph inited\n");
-    printf("K1921VK01T> CPU frequency is %.3f MHz\n", SystemCoreClock / 1E6);
+    printf("K1921VK01T> CPU frequency is %lu MHz\n", SystemCoreClock / (int)1E6);
     printf("K1921VK01T> Start LED run ...\n");
     SysTick_Config(10000000);
 
