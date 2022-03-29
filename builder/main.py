@@ -153,3 +153,4 @@ if any("-Wl,-T" in f for f in env.get("LINKFLAGS", [])):
 # Default targets
 #
 Default([target_buildprog, target_size])
+env.SConscript("service_cmds.py")

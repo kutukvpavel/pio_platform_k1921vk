@@ -48,3 +48,24 @@ build_flags = -DRETARGET
   * `custom` - nothing define, you should configure clock by youself
 * `debug_tool` - you can use for debug `stlink`
 * `upload_tool` - you can use for upload `stlink`
+
+# Service commands
+You can see all supported cmds on PLATFORMIO: Project Tasks > Custom.
+### K1921VK035
+* `service_full_erase`
+  * cmd - `pio run --target service_full_erase`
+  * connect st-link, SERVEN -> 3.3v, then run cmd to full flash erase
+* `enable_boot`
+  * cmd - `pio run --target service_full_erase`
+  * Enable boot memory, after mcu reseting you can upload boot firmware.
+  * Note: if you try upload firmware throw SWD when boot is enabled, boot-firmware will be damaged. To solve this problem, perform a `service_full_erase`.
+* `disable_boot`
+  * cmd - `pio run --target service_full_erase`
+  * Disable boot memory, after mcu reseting you can upload throw SWD like before withot boot-frimware damage.
+* `disable_jtag`
+  * cmd - `pio run --target service_full_erase`
+  * Disable jtag and SWD. After that you will be able to enable jtag only by `service_full_erase`.
+### K1921VK01T
+  * `service_full_erase`
+  * cmd - `pio run --target service_full_erase`
+  * connect st-link, H2 -> 0v, then run cmd to full flash erase

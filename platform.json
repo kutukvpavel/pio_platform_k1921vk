@@ -5,11 +5,11 @@
   "homepage": "https://github.com/DCVostok/pio_platform_k1921vk",
   "license": "Apache-2.0",
   "keywords": [
-      "dev-platform",
-      "ARM",
-      "Cortex-M",
-      "K1921VK",
-      "NIIET"
+    "dev-platform",
+    "ARM",
+    "Cortex-M",
+    "K1921VK",
+    "NIIET"
   ],
   "engines": {
     "platformio": "^5"
@@ -18,7 +18,7 @@
     "type": "git",
     "url": "TODO"
   },
-  "version": "1.5.4",
+  "version": "1.5.5",
   "frameworks": {
     "k1921vk_sdk": {
       "package": "framework-k1921vk-sdk",
@@ -36,11 +36,11 @@
     }
   },
   "packages": {
-    "framework-k1921vk-sdk":{
+    "framework-k1921vk-sdk": {
       "type": "framework",
       "version": "~1.7.3"
     },
-    "framework-k1921vk-arduino":{
+    "framework-k1921vk-arduino": {
       "type": "framework",
       "optional": true,
       "version": "~1.0.0"
@@ -53,8 +53,7 @@
     "tool-openocd-k1921vk": {
       "type": "uploader",
       "version": "~0.10.0"
-    }
-    ,
+    },
     "tool-k1921vkx-flasher": {
       "type": "uploader",
       "optional": true,
