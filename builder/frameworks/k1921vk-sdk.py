@@ -12,30 +12,33 @@ mcu = board.get("build.mcu", "")
 env.SConscript("_bare.py")
 
 SDK_DIR = platform.get_package_dir("framework-k1921vk-sdk")
-DEVICE_DIR =  os.path.join(SDK_DIR,"platform","Device","NIIET",mcu)
-DEVICE_RETARGET_DIR = os.path.join(SDK_DIR,"platform","retarget","Template",mcu)
+CMSIS_DIR = platform.get_package_dir("framework-cmsis")
+DEVICE_DIR = os.path.join(SDK_DIR, "platform", "Device", "NIIET", mcu)
+DEVICE_RETARGET_DIR = os.path.join(
+    SDK_DIR, "platform", "retarget", "Template", mcu)
 DEVICE_SDK_DIR = ""
 if mcu == "K1921VK01T":
-    DEVICE_SDK_DIR=os.path.join(SDK_DIR,"platform","niietcm4_pd")
+    DEVICE_SDK_DIR = os.path.join(SDK_DIR, "platform", "niietcm4_pd")
 elif mcu == "K1921VK028":
-    DEVICE_SDK_DIR=os.path.join(SDK_DIR,"platform","plib028")
+    DEVICE_SDK_DIR = os.path.join(SDK_DIR, "platform", "plib028")
 elif mcu == "K1921VK035":
-    DEVICE_SDK_DIR=os.path.join(SDK_DIR,"platform","plib035")
+    DEVICE_SDK_DIR = os.path.join(SDK_DIR, "platform", "plib035")
 
 env.Append(
-        CPPPATH=[
-            os.path.join(DEVICE_SDK_DIR, "inc")
-        ],
-    )
+    CPPPATH=[
+        os.path.join(DEVICE_SDK_DIR, "inc")
+    ],
+)
 
 if not board.get("build.ldscript", ""):
-    env.Replace(LDSCRIPT_PATH=os.path.join(DEVICE_DIR, "Source","GCC","%s.ld"%mcu))
+    env.Replace(LDSCRIPT_PATH=os.path.join(
+        DEVICE_DIR, "Source", "GCC", "%s.ld" % mcu))
 
 
 env.Append(
     CPPPATH=[
         os.path.join(DEVICE_DIR, "Include"),
-        os.path.join( SDK_DIR, "platform","CMSIS","Core","Include")
+        os.path.join(CMSIS_DIR, "CMSIS", "Core", "Include")
     ]
 )
 
@@ -43,7 +46,7 @@ env.Append(
 # Compile startup_script
 #
 if not board.get("build.custom_startup_script", ""):
-    sources_path = os.path.join(DEVICE_DIR, "Source","GCC")
+    sources_path = os.path.join(DEVICE_DIR, "Source", "GCC")
     env.BuildSources(
         os.path.join("$BUILD_DIR", "startup_script"), sources_path,
         src_filter=[
@@ -51,10 +54,11 @@ if not board.get("build.custom_startup_script", ""):
             "+<startup_%s.S>" % mcu]
     )
 else:
-    sources_path =  os.path.dirname(board.get("build.custom_startup_script", ""))
-    file_name =  os.path.basename(board.get("build.custom_startup_script", ""))
+    sources_path = os.path.dirname(
+        board.get("build.custom_startup_script", ""))
+    file_name = os.path.basename(board.get("build.custom_startup_script", ""))
     print(sources_path)
-    print(file_name) 
+    print(file_name)
     env.BuildSources(
         os.path.join("$BUILD_DIR", "startup_script"), sources_path,
         src_filter=[

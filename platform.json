@@ -18,7 +18,7 @@
     "type": "git",
     "url": "TODO"
   },
-  "version": "1.5.5",
+  "version": "1.5.6",
   "frameworks": {
     "k1921vk_sdk": {
       "package": "framework-k1921vk-sdk",
@@ -58,6 +58,14 @@
       "type": "uploader",
       "optional": true,
       "version": "~1.0.0"
+    },
+    "framework-cmsis": {
+      "type": "framework",
+      "owner": "platformio",
+      "version": "~2.50700.0",
+      "optionalVersions": [
+        "~2.50700.0"
+      ]
     }
   }
 }
