@@ -18,7 +18,7 @@
     "type": "git",
     "url": "TODO"
   },
-  "version": "1.5.7",
+  "version": "1.6.0",
   "frameworks": {
     "k1921vk_sdk": {
       "package": "framework-k1921vk-sdk",
@@ -33,17 +33,29 @@
       "description": "The arduino framework for NIIET microcontrollers",
       "homepage": "http://arduino.cc",
       "title": "Arduino"
+    },
+    "freertos": {
+      "package": "framework-k1921vk-freertos",
+      "script": "builder/frameworks/freertos.py",
+      "description": "The freeRTOS  for NIIET microcontrollers",
+      "homepage": "https://freertos.org/",
+      "title": "FreeRTOS"
     }
   },
   "packages": {
     "framework-k1921vk-sdk": {
       "type": "framework",
-      "version": "~1.7.3"
+      "version": "^1.7.3"
+    },
+    "framework-k1921vk-freertos": {
+      "type": "framework",
+      "optional": true,
+      "version": "^10.4.6"
     },
     "framework-k1921vk-arduino": {
       "type": "framework",
       "optional": true,
-      "version": "~1.0.0"
+      "version": "^1.0.0"
     },
     "toolchain-gccarmnoneeabi": {
       "type": "toolchain",
@@ -52,20 +64,17 @@
     },
     "tool-openocd-k1921vk": {
       "type": "uploader",
-      "version": "~0.10.0"
+      "version": "^0.10.0"
     },
     "tool-k1921vkx-flasher": {
       "type": "uploader",
       "optional": true,
-      "version": "~1.1.0"
+      "version": "^1.1.0"
     },
     "framework-cmsis": {
       "type": "framework",
       "owner": "platformio",
-      "version": "~2.50700.0",
-      "optionalVersions": [
-        "~2.50700.0"
-      ]
+      "version": "~2.50700.0"
     }
   }
 }

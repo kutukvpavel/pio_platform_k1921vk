@@ -13,14 +13,15 @@
     "svd_path": "K1921VK035.svd"
   },
   "frameworks": [
-    "k1921vk_sdk"
+    "k1921vk_sdk",
+    "freertos"
   ],
   "name": "Generic K1921VK035",
   "upload": {
     "disable_flushing": false,
     "maximum_ram_size": 16384,
     "maximum_size": 65536,
-    "offset_address":"0x00000000",
+    "offset_address": "0x00000000",
     "protocol": "stlink",
     "protocols": [
       "stlink"
@@ -29,7 +30,6 @@
     "use_1200bps_touch": false,
     "wait_for_upload_port": false
   },
-
   "url": "https://niiet.ru/product/1921%D0%B2%D0%BA035/",
   "vendor": "Generic"
 }
