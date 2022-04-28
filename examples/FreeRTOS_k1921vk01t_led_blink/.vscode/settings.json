@@ -3,6 +3,7 @@
         "*.include": "verilog",
         "*.v": "verilog",
         "*.rmd": "markdown",
-        "freertos.h": "c"
+        "freertos.h": "c",
+        "task.h": "c"
     }
 }
