@@ -1,0 +1,41 @@
+{
+  "build": {
+    "core": "K1921VK",
+    "cpu": "cortex-m4f",
+    "extra_flags": "",
+    "f_ext": "16000000L",
+    "_comment": "if f_ext = 0 then pll use internal RC 8Mgz",
+    "f_cpu": "100000000L",
+    "clk_select": "pll",
+    "mcu": "K1921VK035",
+    "variant": "vostok_uno_vn035_revC",
+    "board": "VOSTOK_UNO_VN035"
+  },
+  "debug": {
+    "openocd_target": "k1921vk035",
+    "svd_path": "K1921VK035.svd"
+  },
+  "frameworks": [
+    "k1921vk_sdk",
+    "arduino",
+    "freertos"
+  ],
+  "name": "Vostok UNO-VN035",
+  "upload": {
+    "disable_flushing": false,
+    "maximum_ram_size": 16384,
+    "maximum_size": 65536,
+    "offset_address": "0x00000000",
+    "protocol": "k1921vkx_flasher",
+    "protocols": [
+      "stlink",
+      "k1921vkx_flasher"
+    ],
+    "require_upload_port": true,
+    "use_1200bps_touch": false,
+    "wait_for_upload_port": false,
+    "speed": 460800
+  },
+  "url": "https://niiet.ru/product/1921%D0%B2%D0%BA035/",
+  "vendor": "Vostok"
+}
