@@ -18,7 +18,7 @@
     "type": "git",
     "url": "TODO"
   },
-  "version": "1.7.0",
+  "version": "1.7.1",
   "frameworks": {
     "k1921vk_sdk": {
       "package": "framework-k1921vk-sdk",
@@ -69,7 +69,7 @@
     "tool-k1921vkx-flasher": {
       "type": "uploader",
       "optional": true,
-      "version": "^1.1.0"
+      "version": "^1.2.0"
     },
     "framework-cmsis": {
       "type": "framework",
