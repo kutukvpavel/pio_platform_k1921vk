@@ -18,7 +18,7 @@
     "type": "git",
     "url": "TODO"
   },
-  "version": "1.7.1",
+  "version": "1.7.2",
   "frameworks": {
     "k1921vk_sdk": {
       "package": "framework-k1921vk-sdk",
@@ -64,7 +64,7 @@
     },
     "tool-openocd-k1921vk": {
       "type": "uploader",
-      "version": "^0.10.0"
+      "version": "^0.11.0"
     },
     "tool-k1921vkx-flasher": {
       "type": "uploader",
