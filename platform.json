@@ -3,7 +3,7 @@
   "title": "K1921VK",
   "description": "NIIET K1921VK series",
   "homepage": "https://github.com/DCVostok/pio_platform_k1921vk",
-  "license": "Apache-2.0",
+  "license": "MIT",
   "keywords": [
     "dev-platform",
     "ARM",
