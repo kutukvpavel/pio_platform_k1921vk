@@ -20,7 +20,7 @@
     "arduino",
     "freertos"
   ],
-  "name": "Vostok UNO-VN035",
+  "name": "Vostok UNO-VN035-revC",
   "upload": {
     "disable_flushing": false,
     "maximum_ram_size": 16384,
