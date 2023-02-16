@@ -1,7 +1,7 @@
 #include "plib035.h"
 #include "retarget_conf.h"
 
-#define LED_PIN (GPIO_Pin_6)
+#define LED_PIN (GPIO_Pin_5)
 #define LED_PORT (GPIOB)
 
 void periph_init()
