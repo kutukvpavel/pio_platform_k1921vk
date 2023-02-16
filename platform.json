@@ -18,7 +18,7 @@
     "type": "git",
     "url": "https://github.com/DCVostok/pio_platform_k1921vk"
   },
-  "version": "1.7.4",
+  "version": "1.7.5",
   "frameworks": {
     "k1921vk_sdk": {
       "package": "framework-k1921vk-sdk",
@@ -28,7 +28,7 @@
       "title": "NIIET k1921vk SDK"
     },
     "arduino": {
-      "package": "framework-k1921vk-arduino",
+      "package": "vostok-1-frmwrk-vn-arduino",
       "script": "builder/frameworks/arduino.py",
       "description": "The arduino framework for NIIET microcontrollers",
       "homepage": "http://arduino.cc",
@@ -52,15 +52,15 @@
       "optional": true,
       "version": "^10.4.6"
     },
-    "framework-k1921vk-arduino": {
+    "vostok-1-frmwrk-vn-arduino": {
       "type": "framework",
       "optional": true,
-      "version": "^1.0.0"
+      "version": "^1.0.1"
     },
     "toolchain-gccarmnoneeabi": {
       "type": "toolchain",
       "owner": "platformio",
-      "version": ">=1.60301.0,<1.80000.0"
+      "version": "1.100301"
     },
     "tool-openocd-k1921vk": {
       "type": "uploader",
@@ -69,7 +69,7 @@
     "tool-k1921vkx-flasher": {
       "type": "uploader",
       "optional": true,
-      "version": "~1.2.1"
+      "version": "^1.2.1"
     },
     "framework-cmsis": {
       "type": "framework",
