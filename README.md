@@ -1,5 +1,5 @@
 # NIIET K1921VK: development platform for [PlatformIO](http://platformio.org)
-
+[![PlatformIO Registry](https://badges.registry.platformio.org/packages/dcvostok/platform/k1921vk.svg)](https://registry.platformio.org/platforms/dcvostok/k1921vk)
 
 # Usage
 
