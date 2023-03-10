@@ -50,7 +50,7 @@
     "framework-k1921vk-freertos": {
       "type": "framework",
       "optional": true,
-      "version": "^10.4.6"
+      "version": "^10.5.1"
     },
     "vostok-1-frmwrk-vn-arduino": {
       "type": "framework",
