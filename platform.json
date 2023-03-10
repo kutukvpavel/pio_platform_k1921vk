@@ -18,7 +18,7 @@
     "type": "git",
     "url": "https://github.com/DCVostok/pio_platform_k1921vk"
   },
-  "version": "1.7.6",
+  "version": "1.7.7",
   "frameworks": {
     "k1921vk_sdk": {
       "package": "framework-k1921vk-sdk",
