@@ -24,7 +24,8 @@
     "offset_address": "0x00000000",
     "protocol": "stlink",
     "protocols": [
-      "stlink"
+      "stlink",
+      "ftdi"
     ],
     "require_upload_port": true,
     "use_1200bps_touch": false,
