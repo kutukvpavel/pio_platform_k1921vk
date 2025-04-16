@@ -1,6 +1,7 @@
 This fork enable the use of alternative JTAG programmers for K19xxVx035 boards, like:
  - Altera USB blaster
  - FTDI-based
+
 It also makes service `pio run` targets aware of the upload method set in a project settings.
 
 # NIIET K1921VK: development platform for [PlatformIO](http://platformio.org)
