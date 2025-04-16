@@ -6,6 +6,7 @@ env = DefaultEnvironment()
 platform = env.PioPlatform()
 board = env.BoardConfig()
 mcu = board.get("build.mcu", "")
+upload_protocol = board.get("upload_protocol", "")
 
 if mcu == "K1921VK01T":
     openocd_flags=["-s", os.path.join(platform.get_package_dir("framework-k1921vk-sdk"),"tools","openocd","openocd-snippets","k1921vk035" ) or "", 
@@ -29,9 +30,9 @@ if mcu == "K1921VK01T":
 if mcu == "K1921VK035":
     openocd_flags=["-s", os.path.join(platform.get_package_dir("framework-k1921vk-sdk"),"tools","openocd","openocd-snippets","k1921vk035" ) or "", 
                        "-s", os.path.join(platform.get_package_dir("tool-openocd-k1921vk"),"scripts") or "",
-                       "-f","interface/stlink-v2.cfg",
+                       "-f","interface/%s.cfg" % upload_protocol,
                        "-f","target/k1921vk035.cfg",
-                       "-c", "\"transport select hla_swd; init; reset init; flash probe 0; k1921vk035 srv_erase; exit\""]
+                       "-c", "\"init; reset init; flash probe 0; k1921vk035 srv_erase; exit\""]
     openocd_bin  = os.path.join(platform.get_package_dir("tool-openocd-k1921vk"),"bin","openocd")
     openocd_cmd = [openocd_bin,*openocd_flags]
 
@@ -48,9 +49,9 @@ if mcu == "K1921VK035":
 
     openocd_flags=["-s", os.path.join(platform.get_package_dir("framework-k1921vk-sdk"),"tools","openocd","openocd-snippets","k1921vk035" ) or "", 
                        "-s", os.path.join(platform.get_package_dir("tool-openocd-k1921vk"),"scripts") or "",
-                       "-f","interface/stlink-v2.cfg",
+                       "-f","interface/%s.cfg" % upload_protocol,
                        "-f","target/k1921vk035.cfg",
-                       "-c", "\"transport select hla_swd; init; reset init; flash probe 0; k1921vk035 nvr_boot enable; reset; shutdown\""] # enable boot and disable jtag 
+                       "-c", "\"init; reset init; flash probe 0; k1921vk035 nvr_boot enable; reset; shutdown\""] # enable boot and disable jtag 
     openocd_bin  = os.path.join(platform.get_package_dir("tool-openocd-k1921vk"),"bin","openocd")
     openocd_cmd = [openocd_bin,*openocd_flags]
 
@@ -67,9 +68,9 @@ if mcu == "K1921VK035":
 
     openocd_flags=["-s", os.path.join(platform.get_package_dir("framework-k1921vk-sdk"),"tools","openocd","openocd-snippets","k1921vk035" ) or "", 
                        "-s", os.path.join(platform.get_package_dir("tool-openocd-k1921vk"),"scripts") or "",
-                       "-f","interface/stlink-v2.cfg",
+                       "-f","interface/%s.cfg" % upload_protocol,
                        "-f","target/k1921vk035.cfg",
-                       "-c", "\"transport select hla_swd; init; reset init; flash probe 0; k1921vk035 nvr_boot disable; reset; shutdown\""] # enable boot and disable jtag 
+                       "-c", "\"init; reset init; flash probe 0; k1921vk035 nvr_boot disable; reset; shutdown\""] # enable boot and disable jtag 
     openocd_bin  = os.path.join(platform.get_package_dir("tool-openocd-k1921vk"),"bin","openocd")
     openocd_cmd = [openocd_bin,*openocd_flags]
 
@@ -86,9 +87,9 @@ if mcu == "K1921VK035":
 
     openocd_flags=["-s", os.path.join(platform.get_package_dir("framework-k1921vk-sdk"),"tools","openocd","openocd-snippets","k1921vk035" ) or "", 
                        "-s", os.path.join(platform.get_package_dir("tool-openocd-k1921vk"),"scripts") or "",
-                       "-f","interface/stlink-v2.cfg",
+                       "-f","interface/%s.cfg" % upload_protocol,
                        "-f","target/k1921vk035.cfg",
-                       "-c", "\"transport select hla_swd; init; reset init; flash probe 0; k1921vk035 jtag enable; reset; shutdown\""] # enable boot and disable jtag 
+                       "-c", "\"init; reset init; flash probe 0; k1921vk035 jtag enable; reset; shutdown\""] # enable boot and disable jtag 
     openocd_bin  = os.path.join(platform.get_package_dir("tool-openocd-k1921vk"),"bin","openocd")
     openocd_cmd = [openocd_bin,*openocd_flags]
 
