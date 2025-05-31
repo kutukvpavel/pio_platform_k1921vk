@@ -6,7 +6,7 @@ env = DefaultEnvironment()
 platform = env.PioPlatform()
 board = env.BoardConfig()
 mcu = board.get("build.mcu", "")
-upload_protocol = board.get("upload_protocol", "")
+upload_protocol = env.subst("$UPLOAD_PROTOCOL")
 
 if mcu == "K1921VK01T":
     openocd_flags=["-s", os.path.join(platform.get_package_dir("framework-k1921vk-sdk"),"tools","openocd","openocd-snippets","k1921vk035" ) or "", 
